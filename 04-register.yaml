@@ -4,7 +4,7 @@
     tasks:
       - name: Printing Global URL
         ansible.builtin.shell: uptime
-        Register: OUT
+        register: OUT
           
       - name: Priniting the OUT variable
         ansible.builtin.debug:
