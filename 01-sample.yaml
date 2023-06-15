@@ -10,7 +10,7 @@
         msg: Hai from play1 of task2 
 
 - name: Play2  
-  hosts: prod 
+  hosts: frontend 
   tasks:
     - name: Printing Hai From Play2
       ansible.builtin.debug:
