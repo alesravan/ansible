@@ -1,0 +1,12 @@
+- name: Demo of the facts  
+  hosts: all 
+  
+  tasks:
+    - name: priniting facts
+      ansible.builtin.debug:
+        msg: ansible_distribution {{ansible_distribution}}
+        
+    - name: priniting facts
+      ansible.builtin.debug:
+        msg: ansible_distribution {{ansible_default_ipv4.macaddress}}
+
