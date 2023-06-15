@@ -4,6 +4,10 @@
     URL: test.google.com
   vars_files:
     - dev-vars.yml
+  vars_prompt:
+    - name : URLName
+      prompt: enter the user name
+      private: no
   tasks:
     - name: Printing Global URL
       ansible.builtin.debug:
@@ -14,3 +18,7 @@
         URL: local.google.com
       ansible.builtin.debug:
         msg: value of the URL is  {{ URL }}
+    
+    - name: Printing prompt variable
+      ansible.builtin.debug:
+        msg: value of the URL is  {{ URLName }}
