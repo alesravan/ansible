@@ -2,7 +2,15 @@
   hosts: all 
   vars:
     URL: test.google.com
+  vars_files:
+    - dev-vars.yaml
   tasks:
-    - name: Printing URL
+    - name: Printing Global URL
+      ansible.builtin.debug:
+        msg: value of the URL is  {{ URL }}
+
+    - name: Printing local variable
+      vars:
+        URL: local.google.com
       ansible.builtin.debug:
         msg: value of the URL is  {{ URL }}
