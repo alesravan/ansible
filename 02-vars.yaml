@@ -1,0 +1,8 @@
+- name: Demo of the variab le  
+  hosts: all 
+  vars:
+    URL: test.google.com
+  tasks:
+    - name: Printing URL
+      ansible.builtin.debug:
+        msg: value of the URL is  {{ URL }}
