@@ -1,0 +1,26 @@
+- name: demo on conditions
+  hosts: all
+  vars: 
+    action: true
+    bar: abc
+
+  tasks:
+    - name: Run this scrpt when the machine is Centos
+      ansible.builtin.debug:
+        msg: I am a Centos
+        when: ansible_distribution == "CentOS"
+
+    - name: Run this scrpt when the machine is Dabian
+      ansible.builtin.debug:
+        msg: I am a Centos
+        when: ansible_distribution == "Dabian"
+
+    - name: Run this script when the action is true
+      ansible.builtin.debug:
+        msg: Running when the action is true
+        when: action
+
+    - name: I will run only when the value bar is not declared
+      ansible.builtin.debug: 
+        msg: "BAR IS NOT DELCARED"
+        when: bar is undefined
