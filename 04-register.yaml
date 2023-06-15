@@ -1,4 +1,4 @@
-  name: Demo on Register
+- name: Demo on Register
   hosts: all 
 
   tasks:
