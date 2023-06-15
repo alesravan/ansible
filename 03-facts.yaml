@@ -1,6 +1,6 @@
 - name: Demo of the facts  
   hosts: all 
-  
+  # gather_facts: false            using this you can control on gathering the facts.
   tasks:
     - name: priniting facts
       ansible.builtin.debug:
@@ -8,5 +8,5 @@
         
     - name: priniting facts
       ansible.builtin.debug:
-        msg: ansible_distribution {{ansible_default_ipv4.macaddress}}
+        msg: MACAddress {{ansible_default_ipv4.macaddress}}
 
